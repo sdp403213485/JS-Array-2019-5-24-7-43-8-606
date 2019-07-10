@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>3</title> 
+</head>
+<body>
+
+<script>
+
+var a = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+function findMost2(arr) {
+
+    var h = {};
+    var maxNum = 0;
+    var maxEle = null;
+    for (var i = 0; i < arr.length; i++) {
+        var a = arr[i];
+        h[a] === undefined ? h[a] = 1 : (h[a]++);
+        if (h[a] > maxNum) {
+            maxEle = a;
+            maxNum = h[a];
+        }
+    }
+    return '出现次数最多的元素为:' + maxEle + ', 出现次数为:' + maxNum;
+}
+document.write(findMost2(a));
+</script>
+ 
+</body>
+</html>
